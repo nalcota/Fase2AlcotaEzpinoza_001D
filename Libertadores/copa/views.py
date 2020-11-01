@@ -9,7 +9,30 @@ def index(request):
 
     return render(
         request,
-        'index.html'
-        context={ ('num_usuarios ': num_Usuarios) }
+        'index.html',
+        context={'num_usuarios ': num_Usuarios }
     )
+def form(request):
+    
+
+    return render(
+        request,
+        'form.html',
+        
+    )
+def galeria(request):
+    
+
+    return render(
+        request,
+        'galeria.html',
+       
+    )
+
+
+class UsuarioListView(generic.ListView):
+    models = Usuario
+class UsuarioDetailView(generic.DetailView):
+    model = Usuario
+
 

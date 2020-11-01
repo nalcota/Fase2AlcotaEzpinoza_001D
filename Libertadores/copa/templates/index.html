@@ -1,6 +1,6 @@
 {% extends "base_generic.html" %}
 
-
+{% block content %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,11 +12,12 @@
     
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
 
     <!-- Bootstrap core CSS -->
     {% load static %}
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link href="{% static '../assets/dist/css/bootstrap.min.css'%}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -43,12 +44,12 @@
     </style>
 
     <!-- estilos -->
-    <link href="% static 'carousel.css'" rel="stylesheet">
+    <link href="{% static 'carousel.css'%}" rel="stylesheet">
   </head>
   <body>
   
 
-<main role="main">
+  <main role="main">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -58,7 +59,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="% static 'imgc1/liber.png'" width="%100" height="100%" focusable="false">
+        <img src="{% static 'imgc1/liber.png'%}" width="%100" height="100%" focusable="false">
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>Libertadores</h1>
@@ -68,7 +69,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="% static 'imgc1/estadio.jpg'" width="100%" height="100%" >
+        <img src="{% static 'imgc1/estadio.jpg'%}" width="100%" height="100%" >
         <div class="container">
           <div class="carousel-caption text-anchor">
             <h1>Sentiras la pasion por dentro</h1>   
@@ -77,12 +78,12 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="% static 'imgc1/copa.jpg'" width="100%" height="100%">
+        <img src="{% static 'imgc1/copa.jpg'%}" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>No cualquiera puede tocarla</h1>
             <p>Equipos que tuvieron el Honor </p>
-            <p><a class="btn btn-lg btn-primary" href="Galeria.html" role="button">Ver Galeria</a></p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'galeria' %}" role="button">Ver Galeria</a></p>
           </div>
         </div>
       </div>
@@ -106,7 +107,7 @@
     <div class="row">
       <div class="col-lg-4">
        <br>
-        <img src="% static 'img/alberto.jpg'" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >/>
+        <img src="{% static 'img/alberto.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >/>
         <br>
         <br>
         <h2>Alberto Spencer</h2>
@@ -119,7 +120,7 @@
       </div>
       <div class="col-lg-4">
         <br>
-        <img src="% static 'img/Fernando.jpg'" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
+        <img src="{% static 'img/Fernando.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
         <br>
         <br>
 
@@ -132,7 +133,7 @@
 
       <div class="col-lg-4">
         <br>
-        <img src="% static 'img/Daniel.jpg'" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
+        <img src="{% static 'img/Daniel.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
         <br>
         <br>
 
@@ -159,7 +160,7 @@
           <p><a class="btn btn-lg btn-primary" href="http://clubaindependiente.com/institucion/historia" target="_blank" role="button">Leer Mas</a></p>
       </div>
       <div class="col-md-5">
-        <img src="% static 'imgc1/independiente.png'" svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" >
+        <img src="{% static 'imgc1/independiente.png'%}" svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" >
         
       </div>
       
@@ -178,7 +179,7 @@
           <p><a class="btn btn-lg btn-primary" href="https://www.nacional.uy/historia.html" target="_blank" role="button">Leer Mas</a></p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img src="% static 'imgc1/nacional.png'" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
+        <img src="{% static 'imgc1/nacional.png'%}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
       </div>
       
     </div>
@@ -196,7 +197,7 @@
           <p><a class="btn btn-lg btn-primary" href="https://www.bocajuniors.com.ar/el-club/historia" target="_blank" role="button">Leer Mas</a></p>
       </div>
       <div class="col-md-5">
-        <img src="% static 'imgc1/boca2.png'" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" >
+        <img src="{% static 'imgc1/boca2.png'%}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" >
       </div>
     </div>
 
@@ -206,6 +207,9 @@
 
   </div>
 
+    
+  </body>
+
 
   <!-- FOOTER -->
   <footer class="container">
@@ -214,5 +218,6 @@
   </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="% static 'js/bootstrap.bundle.min.js'"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
 </html>
+{% endblock %}
