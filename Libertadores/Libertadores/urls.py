@@ -5,7 +5,11 @@ from django.conf import settings
 
 
 urlpatterns = [
+<<<<<<< HEAD
   #  path('admin/', admin.site.urls),
+=======
+    path('admin/', admin.site.urls),
+>>>>>>> 22797853a16a9c39941318cb8f32cf64cb643fdb
     path('copa/',include('copa.urls'))
    
 
