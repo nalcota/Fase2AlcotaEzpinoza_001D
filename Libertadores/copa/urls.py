@@ -4,10 +4,14 @@ from copa import views
 urlpatterns=[
 	path('',views.index,name='index'),
 	path('usuario/', views.UsuarioListView.as_view(), name='usuario'),
-<<<<<<< HEAD
 	path('usuario/', views.UsuarioDetailView.as_view(), name='usuario-detail'),
 	path('form/', views.form, name='form'),
     path('galeria/', views.galeria, name='galeria'),
-=======
->>>>>>> 22797853a16a9c39941318cb8f32cf64cb643fdb
+]
+
+urlpatterns +=[
+    path('usuario/create/', views.UsuarioCreate.as_view(), name='usuario_create'),
+    path('usuario/<int:pk>/update/', views.UsuarioUpdate.as_view(), name='usuario_update'),
+    path('usuario/<int:pk>/delete/', views.UsuarioDelete.as_view(), name='usuario_delete'),
+
 ]

@@ -2,6 +2,9 @@ from django.shortcuts import render
 from . models import Usuario
 from django.views import generic
 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 # Create your views here.
 
 def index(request):
@@ -14,21 +17,6 @@ def index(request):
     )
 def form(request):
     
-<<<<<<< HEAD
-
-    return render(
-        request,
-        'form.html',
-        
-    )
-def galeria(request):
-    
-
-    return render(
-        request,
-        'galeria.html',
-       
-=======
     
     return render(
         request,
@@ -41,16 +29,26 @@ def galeria(request):
     return render(
         request,
         'Galeria.html',
->>>>>>> 22797853a16a9c39941318cb8f32cf64cb643fdb
     )
 
 
 class UsuarioListView(generic.ListView):
     models = Usuario
-<<<<<<< HEAD
 class UsuarioDetailView(generic.DetailView):
     model = Usuario
-=======
->>>>>>> 22797853a16a9c39941318cb8f32cf64cb643fdb
+
+class UsuarioCreate(CreateView):
+    model= Usuario
+    fields= '__all__'
+
+class UsuarioUpdate(UpdateView):
+    model= Usuario
+    fields= ['rut','first_name','last_name','correo','contraseña','recontraseña','Direccion']
+
+class UsuarioDelete(DeleteView):
+    model= Usuario
+    success_url = reverse_lazy('index')
+
+
 
 
